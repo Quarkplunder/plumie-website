@@ -7,3 +7,35 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 footer{background:linear-gradient(#f5efebea,#f5efebea),url(/images/brand.webp) center/cover} h1,h2,h3{line-height:1.04} .hero h1{font-size:clamp(64px,6.5vw,102px)} @media(max-width:1000px){.hero h1{font-size:65px}} @media(max-width:760px){.hero h1{font-size:60px}}
+
+/* V2 imagery: floating copy occupies the photograph's product-free left edge. */
+.hero{display:block;height:auto;min-height:0;max-height:none;aspect-ratio:1672/941;background:#483e53 url(/images/hero-v2.webp) center top/auto 320% no-repeat}
+.hero-image{position:absolute;inset:0;height:100%;min-height:0}
+.hero-image img{object-fit:contain;object-position:center;mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent),linear-gradient(180deg,transparent,black 5%,black 95%,transparent);mask-composite:intersect}
+.hero-image:after{background:linear-gradient(180deg,transparent 94%,var(--cream));pointer-events:none}
+.hero-copy{position:absolute;left:4%;top:16%;width:25%;padding:0;background:none;display:block;text-align:left}
+.hero h1{font-size:clamp(38px,4vw,74px);margin:22px 0;line-height:1.06}
+.hero-description{font-size:clamp(11px,.95vw,14px);line-height:1.85}
+.hero-copy .eyebrow{font-size:clamp(7px,.6vw,9px)}
+.hero .button.light{min-width:0;width:100%;max-width:260px;margin-top:28px;padding-inline:22px;gap:14px}
+.hero-foot{gap:8px;margin-top:35px;font-size:clamp(7px,.6vw,9px)}
+.hero-foot span+span{padding-left:8px}
+.hero .scroll-cue{left:4%;bottom:25px}
+.hero .image-note{bottom:35px}
+.product-visual{background:#483e53}
+.product-visual img{object-fit:contain;object-position:center}
+.cart-list img{object-fit:contain;background:#483e53}
+@media(max-width:1000px){
+ .hero{aspect-ratio:auto;height:max(690px,calc(380px + 87.25vw))}
+ .hero-copy{left:7%;top:40px;width:86%;text-align:center}
+ .hero h1{font-size:60px;margin:20px 0}
+ .hero-description{font-size:12px}
+ .hero-copy .eyebrow{font-size:8px}
+ .hero .button.light{width:235px;margin-top:25px}
+ .hero-foot{display:none}
+ .hero-image img{width:155%!important;left:-27.5%!important;height:auto!important;top:auto!important;bottom:0!important;object-position:center bottom;mask-image:linear-gradient(180deg,transparent,black 26%,black 96%,transparent)}
+ .hero .image-note{right:20px;bottom:28px;font-size:7px}
+ .hero .scroll-cue{left:22px;bottom:20px}
+}
+@media(max-width:380px){.hero h1{font-size:54px}.hero .hero-copy{left:5%;width:90%}}
+@media(max-width:1000px){.hero-image img{max-width:none;right:auto!important}}
